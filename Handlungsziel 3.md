@@ -46,7 +46,42 @@ Die `CreateToken(User user)`-Methode ist verantwortlich für die Generierung ein
 
 
 ## Mechanismen für die Autorisierung umsetzen
-Autorisierung ist die Zuweisung von Benutzern zu ihren passenden Rollen. 
-In diesem Beispiel wären das Benutzer und Administrator. 
 
-Die Rollen sollen verschiedene Fähigkeiten haben. Der Administrator soll alle Fähigkeiten haben, während der Benutzer nur einige bestimmte Fähigkeiten haben soll. 
+```csharp
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Convert.FromBase64String(builder.Configuration["Jwt:Key"]!)),
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true
+    };
+});
+
+builder.Services.AddAuthorization();
+
+```
+
+Die Autorisierung ist der Prozess, der nach der erfolgreichen Authentifizierung bestimmt, ob ein Benutzer oder eine Anwendung berechtigt ist, auf bestimmte Ressourcen oder Funktionen innerhalb eines Systems zuzugreifen.
+
+
+
+Die Autorisierung wird durch die Verwendung von JSON Web Tokens (JWT) in ASP.NET Core realisiert. Zwei Hauptrollen werden anhand der im Token enthaltenen Ansprüche (Claims) definiert:
+
+- **Benutzer-Capabilities:**
+  - Ein authentifizierter Benutzer wird durch spezifische Ansprüche im JWT-Token identifiziert.
+  - Benutzer haben Zugang zu standardmäßigen Funktionen und Ressourcen, die für normale Benutzer bestimmt sind.
+
+- **Administrator-Capabilities:**
+  - Administratoren werden durch spezifische Claims im JWT-Token identifiziert, z. B. durch eine `Role`-Claim mit Wert `admin`.
+  - Administratoren haben erweiterte Zugriffsberechtigungen auf Funktionen und Ressourcen, die für Administratoren vorgesehen sind.
+
