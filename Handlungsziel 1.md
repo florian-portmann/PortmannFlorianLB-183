@@ -23,7 +23,7 @@ Erläuterung:
 
 Injection-Angriffe umfassen das Einschleusen von schädlichem Code oder Befehlen in Anwendungen oder Systeme. Diese Angriffe können zu Datenmanipulationen, Datenlecks oder sogar zur Übernahme des Systems führen. Die häufigsten Typen sind SQL-Injections und Cross-Site Scripting (XSS), bei denen Angreifer Code einschleusen, um Datenbanken zu manipulieren oder Benutzer dazu zu bringen, unerwünschte Aktionen auszuführen.
 
-###cSecurity Misconfiguration:
+### Security Misconfiguration:
 
 Erkennung der Bedrohung:
 
