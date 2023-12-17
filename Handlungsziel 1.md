@@ -1,39 +1,29 @@
 # Handlungsziel 1
-## Aktuelle Bedrohungen erkennen und erläutern
-### Broken Access Control:
 
-Erkennung der Bedrohung:
+## Aktuelle Bedrohungen
 
-Überwachen Sie Zugriffsprotokolle, um unerwartete oder ungewöhnliche Zugriffsversuche auf sensible Daten oder Funktionen zu identifizieren.
-
-Überprüfen Sie die Benutzerberechtigungen, um sicherzustellen, dass nur autorisierte Benutzer auf bestimmte Ressourcen zugreifen können und dass die Zugriffsrechte angemessen eingerichtet sind.
-
-Erläuterung:
-
-Broken Access Control bezieht sich auf Schwächen in der Zugriffskontrolle, die es Angreifern ermöglichen, auf Bereiche oder Funktionen zuzugreifen, für die sie keine Berechtigung haben sollten. Das kann zu Datenlecks, unautorisierten Änderungen oder sogar zur Übernahme des Systems führen. Diese Schwachstelle ist oft durch unzureichende Validierung von Zugriffsanfragen oder mangelhafte Berechtigungsprüfungen bedingt.
+- **DDOS-Attacke**: Eine Distributed Denial-of-Service (DDOS)-Attacke zielt darauf ab, ein System oder eine Dienstleistung durch eine große Anzahl von Anfragen zu überlasten, sodass sie für legitime Benutzer unzugänglich wird.
+- **Phishing**: Phishing ist eine Betrugsmethode, bei der Angreifer durch gefälschte E-Mails oder Websites versuchen, sensible Informationen wie Passwörter oder Finanzdaten von ahnungslosen Benutzern zu stehlen.
+- **Netzwerkprotokollierung durch Angreifer**: Hierbei platziert ein Angreifer ein Gerät im Netzwerk, um den Datenverkehr abzufangen und zu protokollieren, um sensible Informationen zu sammeln oder Schwachstellen zu identifizieren.
+- **Veränderung von Daten in einer Datenbank**: Ein Angriff, bei dem ein Angreifer unbefugten Zugriff auf eine Datenbank erhält und die Daten manipuliert, um die Funktionalität der Anwendung zu beeinträchtigen oder sensible Informationen zu verändern.
+- **XSS-Angriff**: Cross-Site Scripting (XSS) bezieht sich auf die Einschleusung schädlicher Skripte in Webanwendungen, die dann von anderen Benutzern ausgeführt werden, um Zugriff auf Cookies oder Sitzungen zu erlangen.
 
 
-### Injection:
+## Erkennungsmethoden:
 
-Erkennung der Bedrohung:
+- **DDOS-Attacke**: Überwachung des Netzwerkverkehrs auf ungewöhnlich hohe Anfragen und Implementierung von DDOS-Schutzlösungen.
+- **Phishing**: Schulungen für Mitarbeiter, um verdächtige E-Mails zu erkennen, und Einsatz von E-Mail-Filtern.
+- **Netzwerkprotokollierung durch Angreifer**: Einsatz von Intrusion Detection Systems (IDS) zur Überwachung des Netzwerkverkehrs.
+- **Veränderung von Daten in einer Datenbank**: Implementierung von Zugriffskontrollen und Monitoring für Änderungen in kritischen Datenbanken.
+- **XSS-Angriff**: Verwendung von Web Application Firewalls (WAF) zur Erkennung von schädlichen Skripten in Webanwendungen.
 
-Überprüfen Sie alle Benutzereingaben und Parameter, um sicherzustellen, dass sie keine unerlaubten Befehle oder Skripte enthalten.
+## Gegenmaßnahmen:
 
-Nutzen Sie Tools wie eine Web Application Firewall, um schädliche Injektionen wie SQL-Injections oder Cross-Site Scripting (XSS) zu erkennen und zu blockieren.
+- **DDOS-Attacke**: Verwendung von Content Delivery Networks (CDN) und DDOS-Schutzdiensten.
+- **Phishing**: Multi-Faktor-Authentifizierung und regelmäßige Schulungen zur Sensibilisierung der Mitarbeiter.
+- **Netzwerkprotokollierung durch Angreifer**: Segmentierung des Netzwerks und Einsatz von Verschlüsselung.
+- **Veränderung von Daten in einer Datenbank**: Regelmäßige Überprüfung der Zugriffsberechtigungen und Backups für Datenbanken.
+- **XSS-Angriff**: Aktualisierung von Sicherheitspatches und Implementierung sicherer Codierungspraktiken.
 
-Erläuterung:
-
-Injection-Angriffe umfassen das Einschleusen von schädlichem Code oder Befehlen in Anwendungen oder Systeme. Diese Angriffe können zu Datenmanipulationen, Datenlecks oder sogar zur Übernahme des Systems führen. Die häufigsten Typen sind 
-SQL-Injections und Cross-Site Scripting (XSS), bei denen Angreifer Code einschleusen, um Datenbanken zu manipulieren oder Benutzer dazu zu bringen, unerwünschte Aktionen auszuführen.
-
-### Security Misconfiguration:
-
-Erkennung der Bedrohung:
-
-Verwenden Sie Tools oder Scanner, um Sicherheitskonfigurationsfehler in Systemen oder Anwendungen zu erkennen.
-
-Implementieren Sie klare Sicherheitsrichtlinien und überwachen Sie regelmäßig die Konfiguration von Systemen, um sicherzustellen, dass sie den Standards entsprechen.
-
-Erläuterung:
-
-Sicherheitskonfigurationsfehler treten auf, wenn Systeme, Plattformen oder Anwendungen nicht ordnungsgemäß konfiguriert sind. Dies kann dazu führen, dass sensible Daten ungeschützt sind, unerwünschte Zugriffe ermöglicht werden oder dass Sicherheitsmechanismen nicht richtig funktionieren. Solche Fehler können durch unsichere Standardeinstellungen, nicht entfernte Testkonfigurationen oder fehlende Updates entstehen.
+## Mögliche Auswirkungen:
+Sollten diese Bedrohungen nicht erkannt und entsprechende Gegenmaßnahmen nicht ergriffen werden, könnten schwerwiegende Auswirkungen eintreten. Zum Beispiel könnten Unternehmen Opfer von Datenverlusten, Betriebsunterbrechungen oder Reputationsschäden werden.
