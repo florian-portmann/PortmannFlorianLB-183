@@ -29,3 +29,7 @@ if (user == null)
 ### Auditing:
 
 Auditing bezeichnet die systematische Überwachung und Analyse von Aktivitäten innerhalb eines Systems oder einer Organisation, um die Einhaltung von Standards, Sicherheitsrichtlinien und gesetzlichen Vorschriften sicherzustellen. Es dient der Überprüfung, Überwachung und Dokumentation von Aktivitäten, um Compliance zu gewährleisten und potenzielle Risiken zu identifizieren.
+
+
+## Handlungszielvalidierung
+Ich habe duch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. Jedoch habe ich für Auditing nur eine kleine Beschreibung.
