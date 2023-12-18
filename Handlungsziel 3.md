@@ -41,7 +41,7 @@ Die `CreateToken(User user)`-Methode ist verantwortlich für die Generierung ein
 
 3. **Erstellung des JWT-Tokens:** Basierend auf den definierten Ansprüchen, der Konfiguration und den Signierungsanmeldeinformationen wird der JWT-Token erstellt.
 
-4. **Rückgabe des Tokens:** Schließlich wird der generierte Token als string zurückgegeben. Dieser Token repräsentiert den JWT-Token, der üblicherweise an den Client gesendet wird, nachdem ein Benutzer erfolgreich authentifiziert wurde.
+4. **Rückgabe des Tokens:** Schliesslich wird der generierte Token als string zurückgegeben. Dieser Token repräsentiert den JWT-Token, der üblicherweise an den Client gesendet wird, nachdem ein Benutzer erfolgreich authentifiziert wurde.
 
 
 
@@ -86,4 +86,4 @@ Die Autorisierung wird durch die Verwendung von JSON Web Tokens (JWT) in ASP.NET
   - Administratoren haben erweiterte Zugriffsberechtigungen auf Funktionen und Ressourcen, die für Administratoren vorgesehen sind.
 
 ## Handlungszielvalidierung
-Ich habe duch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. 
+Ich habe durch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. 
