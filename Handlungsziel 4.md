@@ -3,20 +3,12 @@ Ich werde hier auf Human Factor eingehen. Human Factor sagt, dass eines der grö
 
 ## Sicherheitsrelevante Aspekte bei Entwurf
 Eine Möglichkeit um sich vor Human-Facotor-Gefahren zu schützen wäre, dass man das alte Passwort eingeben muss, wenn man sein Passwort zurücksetzen möchte. 
-
-
-### Sicherheitsrisiko beim Passwort-Reset ohne Überprüfung des alten Passworts
-
-Ein Passwort-Reset ohne Überprüfung des alten Passworts birgt das Risiko eines unbefugten Zugriffs auf Konten. Wenn ein Benutzer das Passwort zurücksetzen kann, ohne das alte Passwort einzugeben, könnten Unbefugte möglicherweise das Zurücksetzungsverfahren manipulieren und unautorisierten Zugriff auf das Konto erlangen.
-
-### Warum das Einbeziehen des alten Passworts wichtig ist
-
-Das Einbeziehen des alten Passworts als Bestätigung beim Passwort-Reset stellt sicher, dass der Benutzer seine Identität authentifizieren muss, bevor Änderungen am Passwort vorgenommen werden. Dadurch wird das Risiko von unbefugtem Zugriff minimiert und die Sicherheit des Kontos verbessert.
+Ich möchte dies implementieren und zusätzlich soll das Passwort auch noch validiert werden. 
 
 
 ## Sicherheitsrelevante Aspekte bei Implementierung 
-### Passwort ändern
-
+### Passwort ändern:
+```csharp
 public ActionResult PasswordUpdate(PasswordUpdateDto request)
         {
             if (request == null)
@@ -49,8 +41,47 @@ public ActionResult PasswordUpdate(PasswordUpdateDto request)
 
             return Ok("success");
         }
+```
 
+### Validierung des neuen Passwort:
+```csharp
+ private string validateNewPasswort(string newPassword)
+        {
+            string patternSmall = "[a-zäöü]";
+            Regex regexSmall = new Regex(patternSmall);
+            bool hasSmallLetter = regexSmall.Match(newPassword).Success;
+
+            string patternCapital = "[A-ZÄÖÜ]";
+            Regex regexCapital = new Regex(patternCapital);
+            bool hasCapitalLetter = regexCapital.Match(newPassword).Success;
+
+            string patternNumber = "[0-9]";
+            Regex regexNumber = new Regex(patternNumber);
+            bool hasNumber = regexNumber.Match(newPassword).Success;
+
+            List<string> result = new List<string>();
+            if (!hasSmallLetter)
+            {
+                result.Add("keinen Kleinbuchstaben");
+            }
+            if (!hasCapitalLetter)
+            {
+                result.Add("keinen Grossbuchstaben");
+            }
+            if (!hasNumber)
+            {
+                result.Add("keine Zahl");
+            }
+
+            if (result.Count > 0)
+            {
+                return "Das Passwort beinhaltet " + string.Join(", ", result);
+            }
+            return "";
+        }
+
+```
 
 
 ## Sicherheitsrelevante Aspekte bei Inbetriebnahme
-
+Wenn der User jetzt sein Passwort ändern will, muss er zuerst sein altes Passwort eingeben. Danach kann er sein neues Passwort wählen und das Passwort wird validiert. 
