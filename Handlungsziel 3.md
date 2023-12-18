@@ -85,3 +85,5 @@ Die Autorisierung wird durch die Verwendung von JSON Web Tokens (JWT) in ASP.NET
   - Administratoren werden durch spezifische Claims im JWT-Token identifiziert, z. B. durch eine `Role`-Claim mit Wert `admin`.
   - Administratoren haben erweiterte Zugriffsberechtigungen auf Funktionen und Ressourcen, die für Administratoren vorgesehen sind.
 
+## Handlungszielvalidierung
+Ich habe duch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. 
