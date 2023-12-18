@@ -23,7 +23,7 @@ public ActionResult<User> Login(LoginDto request)
         }
 ```
 
-Die Sicherheitslücke liegt in der unsicheren Verarbeitung der Benutzereingaben in der SQL-Abfrage des Login-Prozesses. Durch direkte Einfügung von manipulierten Werten in die SQL-Abfrage, insbesondere im string.Format-Teil, könnten Angreifer Schadcode einschleusen und die Abfrage so manipulieren, dass sie sich ohne korrektes Passwort authentifizieren können. Diese Schwachstelle öffnet die Tür für sogenannte SQL-Injection-Angriffe, bei denen Angreifer die Datenbank manipulieren oder unerlaubten Zugriff erlangen können.
+Die Sicherheitslücke liegt in der unsicheren Verarbeitung der Benutzereingaben in der SQL-Abfrage des Login-Prozesses. Durch direkte Einfügung von manipulierten Werten in die SQL-Abfrage, insbesondere im string. Format-Teil, könnten Angreifer Schadcode einschleusen und die Abfrage so manipulieren, dass sie sich ohne korrektes Passwort authentifizieren können. Diese Schwachstelle öffnet die Tür für sogenannte SQL-Injection-Angriffe, bei denen Angreifer die Datenbank manipulieren oder unerlaubten Zugriff erlangen können.
 
 ## Gegenmassnahmen vorschlagen und implementieren
 
@@ -54,11 +54,11 @@ public ActionResult<User> Login(LoginDto request)
         }
 ```
 
-Dieser aktualisierte Code schließt die Sicherheitslücke durch SQL-Injection auf folgende Weise:
+Dieser aktualisierte Code schliesst die Sicherheitslücke durch SQL-Injection auf folgende Weise:
 
-1. **Verwendung von Parameterisierung:**
-   - Die Benutzereingaben werden außerhalb der SQL-Abfrage als Variablen gespeichert: `string username = request.Username;` und `string passwordHash = MD5Helper.ComputeMD5Hash(request.Password);`.
-   - Anstatt die Benutzereingaben direkt in die SQL-Abfrage einzufügen, werden sie als Parameter behandelt und in einer parameterisierten Abfrage verwendet.
+1. **Verwendung von Parametrisierung:**
+   - Die Benutzereingaben werden ausserhalb der SQL-Abfrage als Variablen gespeichert: `string username = request.Username;` und `string passwordHash = MD5Helper.ComputeMD5Hash(request.Password);`.
+   - Anstatt die Benutzereingaben direkt in die SQL-Abfrage einzufügen, werden sie als Parameter behandelt und in einer parametrisierten Abfrage verwendet.
 
 2. **Verwendung von LINQ:**
    - Die SQL-Abfrage wurde durch eine LINQ-Abfrage ersetzt (`_context.Users.Where(...)`).
@@ -67,4 +67,4 @@ Dieser aktualisierte Code schließt die Sicherheitslücke durch SQL-Injection au
 
 
 ## Handlungszielvalidierung
-Ich habe hier mithilfe des Codes und einer deteilieten Beschreibung gezeigt, dass ich die Handlungsziele erreicht habe. 
+Ich habe hier mithilfe des Codes und einer detaillierten Beschreibung gezeigt, dass ich die Handlungsziele erreicht habe. 
