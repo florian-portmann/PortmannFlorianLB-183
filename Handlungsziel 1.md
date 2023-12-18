@@ -27,3 +27,4 @@
 
 ## Mögliche Auswirkungen:
 Sollten diese Bedrohungen nicht erkannt und entsprechende Gegenmaßnahmen nicht ergriffen werden, könnten schwerwiegende Auswirkungen eintreten. Zum Beispiel könnten Unternehmen Opfer von Datenverlusten, Betriebsunterbrechungen oder Reputationsschäden werden.
+
