@@ -85,3 +85,6 @@ public ActionResult PasswordUpdate(PasswordUpdateDto request)
 
 ## Sicherheitsrelevante Aspekte bei Inbetriebnahme
 Wenn der User jetzt sein Passwort ändern will, muss er zuerst sein altes Passwort eingeben. Danach kann er sein neues Passwort wählen und das Passwort wird validiert. 
+
+## Handlungszielvalidierung
+Ich habe duch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. 
