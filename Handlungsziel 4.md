@@ -1,8 +1,8 @@
 # Handlungsziel 4
-Ich werde hier auf Human Factor eingehen. Human Factor sagt, dass eines der grössten Sicherheitsprobelmen der Mensch selber ist. Wenn sich ein User zum Beispiel auf irgendwelchen unvertrauenswürgigen Webseiten einloggt, könnte der Besitzer dieses Passwort und Username speichern. Leider verwenden viele Menschen die gleichen Passwörter und Benutzernamen auf verschieden Webseiten. So könnte sich der Angreiffer je nachdem auf verschiedensten Webseiten einloggen, weil er die Logindaten gesepeichert hat. 
+Ich werde hier auf Human Factor eingehen. Human Factor sagt, dass eines der grössten Sicherheitsprobleme der Mensch selber ist. Wenn sich ein User zum Beispiel auf irgendwelchen unvertrauenswürdigen Webseiten einloggt, könnte der Besitzer dieses Passwort und Username speichern. Leider verwenden viele Menschen die gleichen Passwörter und Benutzernamen auf verschiedenen Webseiten. So könnte sich der Angreifer je nachdem auf verschiedensten Webseiten einloggen, weil er die Logindaten gespeichert hat. 
 
 ## Sicherheitsrelevante Aspekte bei Entwurf
-Eine Möglichkeit um sich vor Human-Facotor-Gefahren zu schützen wäre, dass man das alte Passwort eingeben muss, wenn man sein Passwort zurücksetzen möchte. 
+Eine Möglichkeit, um sich vor Human-Factor-Gefahren zu schützen, wäre, dass man das alte Passwort eingeben muss, wenn man sein Passwort zurücksetzen möchte. 
 Ich möchte dies implementieren und zusätzlich soll das Passwort auch noch validiert werden. 
 
 
@@ -43,7 +43,7 @@ public ActionResult PasswordUpdate(PasswordUpdateDto request)
         }
 ```
 
-### Validierung des neuen Passwort:
+### Validierung des neuen Passworts:
 ```csharp
  private string validateNewPasswort(string newPassword)
         {
@@ -87,4 +87,4 @@ public ActionResult PasswordUpdate(PasswordUpdateDto request)
 Wenn der User jetzt sein Passwort ändern will, muss er zuerst sein altes Passwort eingeben. Danach kann er sein neues Passwort wählen und das Passwort wird validiert. 
 
 ## Handlungszielvalidierung
-Ich habe duch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. 
+Ich habe durch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. 
