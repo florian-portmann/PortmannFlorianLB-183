@@ -1,7 +1,7 @@
 # Handlungsziel 5
 ## Informationen für Auditing und Logging generieren.
 
-### Konfuguration von Logger:
+### Konfiguration von Logger:
 ```csharp
 builder.Host.ConfigureLogging(logging =>
 {
@@ -32,4 +32,4 @@ Auditing bezeichnet die systematische Überwachung und Analyse von Aktivitäten 
 
 
 ## Handlungszielvalidierung
-Ich habe duch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. Jedoch habe ich für Auditing nur eine kleine Beschreibung. Zusätzlich habe ich das Handlungsziel `Auswertungen und Alarme definieren und implementieren.` aufgrund von Zeitmagel nicht erfüllt. 
+Ich habe durch meinen Code und eine Beschreibung gezeigt, dass ich die Handlungsziele erfüllt habe. Jedoch habe ich für Auditing nur eine kleine Beschreibung. Zusätzlich habe ich das Handlungsziel `Auswertungen und Alarme definieren und implementieren.` aufgrund von Zeitmangel nicht erfüllt. 
